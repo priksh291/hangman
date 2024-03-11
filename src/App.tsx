@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+
 
 import { useCallback, useEffect, useState } from "react"
 import words from './wordList.json'
@@ -7,7 +7,7 @@ import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
 
 function App() {
-  const [wordtoGuess, setWordtoGuess] = useState(() => words[Math.floor(Math.random() * words.length)]);
+  const [wordtoGuess] = useState(() => words[Math.floor(Math.random() * words.length)]);
   const [guessedLetters , setGuesseddLetters] = useState<string[]>([])
   const inCorrectLetters = guessedLetters.filter(letter => !wordtoGuess.includes(letter));
   
@@ -37,7 +37,7 @@ function App() {
     }
   },[addGuessedLetter, guessedLetters])
 
-  
+
   return (
     <>
       <div
